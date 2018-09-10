@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14113" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14033"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="watchOSTest_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="left" id="F5O-zy-BWP">
+                            <items>
+                                <label alignment="left" text="Label" id="Seq-9u-MhC"/>
+                                <label alignment="left" text="Label" id="MI0-4Y-deT"/>
+                                <label alignment="left" text="Label" id="qMP-kj-1KG"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="BvV-fW-sLT">
+                            <items>
+                                <label width="0.20000000000000001" height="1" alignment="left" text="Label" numberOfLines="0" id="rEw-vb-fRx"/>
+                                <imageView width="0.80000000000000004" alignment="left" image="waka-flocka" contentMode="scaleAspectFit" id="fne-cb-Raa">
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </imageView>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" layout="vertical" id="U4x-pZ-NQV">
+                            <items>
+                                <button width="1" alignment="left" title="2 étoiles" id="7CY-3X-BjK">
+                                    <connections>
+                                        <action selector="setChampionsDuMonde" destination="AgC-eL-Hgc" id="OhU-Ip-eha"/>
+                                    </connections>
+                                </button>
+                                <button width="1" alignment="left" title="Next interface" id="bhu-kI-mcW">
+                                    <connections>
+                                        <action selector="goToNextInterface" destination="AgC-eL-Hgc" id="Vaj-XF-YFs"/>
+                                    </connections>
+                                </button>
+                                <button width="1" alignment="left" title="See List" id="ObB-tz-nns">
+                                    <connections>
+                                        <action selector="seeList" destination="AgC-eL-Hgc" id="Tf8-Jm-4BM"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="championsDuMondeLabel" destination="rEw-vb-fRx" id="7Vp-Uq-vzC"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--NextInterfaceController-->
+        <scene sceneID="f1k-jR-f8t">
+            <objects>
+                <controller identifier="NextInterfaceController" id="pIK-mS-FcE" customClass="NextInterfaceController" customModule="watchOSTest_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Label" id="Ffw-pl-7dj"/>
+                        <slider width="1" alignment="left" value="1" maximum="3" steps="3" id="wAF-gR-Tab"/>
+                        <switch width="1" alignment="left" value="YES" title="Switch" id="HM6-ey-DAZ"/>
+                    </items>
+                    <connections>
+                        <outlet property="slider" destination="wAF-gR-Tab" id="aaG-aD-xLn"/>
+                        <outlet property="switchZer" destination="HM6-ey-DAZ" id="qGi-zF-Gz8"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="483" y="302"/>
+        </scene>
+        <!--ListInterfaceController-->
+        <scene sceneID="5nw-1H-NVx">
+            <objects>
+                <controller identifier="ListInterfaceController" id="SbN-gh-y2n" customClass="ListInterfaceController" customModule="watchOSTest_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="iK7-UI-qr8">
+                            <items>
+                                <tableRow identifier="school" id="QiJ-AG-NTn" customClass="SchoolRowController" customModule="watchOSTest_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="0Ls-So-fOQ">
+                                        <items>
+                                            <label width="0.69999999999999996" alignment="left" text="Label" id="8m8-xx-3CU"/>
+                                            <imageView width="0.29999999999999999" alignment="left" image="bank_card_back_side" id="Nle-AL-WVF">
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </imageView>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="picture" destination="Nle-AL-WVF" id="Tc7-Qx-eEe"/>
+                                        <outlet property="titleLabel" destination="8m8-xx-3CU" id="6SB-Ww-zbn"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="schoolTable" destination="iK7-UI-qr8" id="Ds4-NG-e5S"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="742" y="302"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="watchOSTest_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+    </scenes>
+</document>
